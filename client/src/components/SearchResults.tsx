@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import RestroomQuery from "./RestroomQuery";
-import { API_BASE_URL } from '../utils/apiConfig';
+//import { API_BASE_URL } from '../utils/apiConfig';
 
 interface Geometry {
   lat: number;

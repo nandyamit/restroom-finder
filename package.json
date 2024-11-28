@@ -12,6 +12,7 @@
     "start": "cd server && npm start"
   },
   "devDependencies": {
+    "@types/node": "^22.10.1",
     "concurrently": "^8.2.2"
   }
 }
