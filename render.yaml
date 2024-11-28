@@ -11,7 +11,7 @@ services:
       npm run build
       cd ../server 
       npm install
-      npm install typescript @types/node @types/express @types/cors @types/jsonwebtoken @types/bcrypt -g
+      npm install -D @types/express @types/cors @types/jsonwebtoken @types/bcrypt typescript
       npm run build
     startCommand: cd server && npm start
     envVars:
