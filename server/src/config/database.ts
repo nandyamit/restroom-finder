@@ -44,10 +44,10 @@ export const connectDB = async () => {
     await sequelize.authenticate();
     logger.info('Database connection established successfully');
     
-    if (process.env.NODE_ENV === 'development') {
-      await sequelize.sync({ alter: true });
-      logger.info('Database synced successfully');
-    }
+    // Sync database in both development and production
+    await sequelize.sync({ alter: true });
+    logger.info('Database synced successfully');
+    
   } catch (error) {
     logger.error('Unable to connect to the database:', error);
     if (error instanceof Error) {
