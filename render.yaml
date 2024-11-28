@@ -7,13 +7,11 @@ services:
       npm install
       cd client
       npm install
-      npm install -D @types/react @types/react-dom typescript @vitejs/plugin-react
       npm run build
       cd ../server 
       npm install
-      npm install -D @types/express @types/cors @types/jsonwebtoken @types/bcrypt typescript
       npm run build
-    startCommand: cd server && npm start
+    startCommand: cd server && node dist/index.js
     envVars:
       - key: NODE_ENV
         value: production

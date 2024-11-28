@@ -9,9 +9,8 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 let sequelize: Sequelize;
 
-if (isProduction) {
-  // Production configuration using DATABASE_URL
-  sequelize = new Sequelize(process.env.DATABASE_URL!, {
+if (isProduction && process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
     dialectOptions: {
       ssl: {
@@ -25,14 +24,13 @@ if (isProduction) {
     }
   });
 } else {
-  // Local development configuration using auth_app database
   sequelize = new Sequelize({
     dialect: 'postgres',
     host: process.env.DB_HOST || 'localhost',
     port: parseInt(process.env.DB_PORT || '5432'),
     username: process.env.DB_USERNAME || 'postgres',
     password: process.env.DB_PASSWORD || '',
-    database: 'auth_app', // Changed to use auth_app database
+    database: 'auth_app',
     logging: (msg) => logger.debug(msg),
     define: {
       timestamps: true,
