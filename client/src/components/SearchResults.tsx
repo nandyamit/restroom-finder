@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import RestroomQuery from "./RestroomQuery";
+import { API_BASE_URL } from '../utils/apiConfig';
 
 interface Geometry {
   lat: number;
@@ -33,9 +34,7 @@ function SearchResults({ query }: SearchResultsProps) {
     setError(null);
     try {
       const apiUrl = "https://api.opencagedata.com/geocode/v1/json";
-      const apiKey = "07c816057971476cacff9911c96755b7";
-      // const apiUrl = process.env.REACT_APP_OPENCAGE_BASE_URL;
-      // const apiKey = process.env.REACT_APP_OPENCAGE_API;
+      const apiKey = import.meta.env.VITE_OPENCAGE_API_KEY;
 
       const url = `${apiUrl}?q=${encodeURIComponent(query)}&key=${apiKey}`;
       const response = await fetch(url);

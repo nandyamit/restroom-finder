@@ -18,11 +18,13 @@
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^18.15.11",
     "sequelize-cli": "^6.6.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.6.3"
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.2"
+    
   },
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node dist/index.js",  
     "build": "tsc",
     "dev": "ts-node-dev --respawn src/index.ts",
     "db:migrate": "sequelize-cli db:migrate",
