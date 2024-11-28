@@ -1,5 +1,6 @@
 const getBaseUrl = () => {
-  const isProd = import.meta.env.PROD || window.location.hostname !== 'localhost';
+  // Check if we're in production by looking at the window location
+  const isProd = window.location.hostname !== 'localhost';
   return isProd ? '' : 'http://localhost:3000';
 };
 
