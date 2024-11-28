@@ -6,7 +6,7 @@ services:
     buildCommand: |
       npm install
       cd client && npm install --include=dev
-      npx vite build
+      npx tsc && npx vite build
       cd ../server && npm install && npm run build
     startCommand: cd server && npm start
     envVars:
