@@ -7,7 +7,8 @@ services:
       npm install
       cd client
       npm install
-      NODE_ENV=production node_modules/.bin/vite build
+      npm install -D @types/react @types/react-dom typescript @vitejs/plugin-react
+      npm run build
       cd ../server 
       npm install
       npm install typescript @types/node @types/express @types/cors @types/jsonwebtoken @types/bcrypt -g
