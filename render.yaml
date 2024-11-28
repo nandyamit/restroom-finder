@@ -8,7 +8,10 @@ services:
       cd client
       npm install
       NODE_ENV=production node_modules/.bin/vite build
-      cd ../server && npm install && npm run build
+      cd ../server 
+      npm install
+      npm install typescript @types/node @types/express @types/cors @types/jsonwebtoken @types/bcrypt -g
+      npm run build
     startCommand: cd server && npm start
     envVars:
       - key: NODE_ENV
